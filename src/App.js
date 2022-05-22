@@ -46,8 +46,8 @@ class App extends React.Component {
         <MainLayout>
           <AnimatedSwitch
             atEnter={{ opacity: 0, top: 200 }}
-            atLeave={{ opacity: 0 }}
-            atActive={{ opacity: 1 }}
+            atLeave={{ opacity: 0, top: 200}}
+            atActive={{ opacity: 1, top: 0 }}
             className={styles.switchWrapper}
             location={location}
           >
@@ -57,7 +57,6 @@ class App extends React.Component {
             <Route exact path='/regions' component={Regions} />
             <Route exact path='/country/:id' component={Country} />
             <Route exact path='/trip/:id' component={Trip} />
-            {/* TODO - add more routes for other views */}
             <Route exact path='/info' component={Info} />
             <Route path='*' component={NotFound} />
           </AnimatedSwitch>
