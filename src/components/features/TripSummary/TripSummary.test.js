@@ -24,8 +24,8 @@ describe('Component TripSummary', () => {
     const component = shallow(<TripSummary name={expectedName} cost={expectedCost} days={expectedDays} tags={[]} />);
 
     expect(component.find('.title').text()).toEqual(expectedName);
-    expect(component.find('.details span').at(0).text()).toEqual(expectedDays);
-    expect(component.find('.details span').at(1).text()).toEqual(expectedCost);
+    expect(component.find('.details span').at(0).text()).toEqual(`${expectedDays} days`);
+    expect(component.find('.details span').at(1).text()).toEqual(`from ${expectedCost}`);
   });
 
   it('Test 4: should throw error without required props', () => {
